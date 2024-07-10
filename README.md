@@ -1,2 +1,3 @@
-# DEP
-Task 1 (Web Development)
+Task 1 Static Website
+Web Development Internship
+Digital Empowerment Network
