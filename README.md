@@ -1,3 +1,2 @@
-Task 1 Static Website
-Web Development Internship
-Digital Empowerment Network
+Task 1 Static Portfolio
+Task 2 Dynamic Blogging Website 
