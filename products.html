@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Necklace Store</title>
+    <title>Products</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
         </nav>
     </header>
     <main>
-        <h2>Featured Necklaces</h2>
+        <h2>All Necklaces</h2>
         <div class="product" data-id="1">
             <img src="necklace1.jpg" alt="Necklace 1" class="product-image">
             <p>Necklace 1 - $100</p>
@@ -33,36 +33,5 @@
             <button>Add to Cart</button>
         </div>
     </main>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const cart = [];
-
-        document.querySelectorAll('.product button').forEach(button => {
-            button.addEventListener('click', () => {
-                const product = button.parentElement;
-                const productName = product.querySelector('p').innerText;
-                const productId = product.dataset.id;
-
-                cart.push({ id: productId, name: productName, quantity: 1 });
-
-                console.log(cart);
-            });
-        });
-
-        document.querySelector('#checkout').addEventListener('click', () => {
-            fetch('order_process.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ cart })
-            })
-            .then(response => response.text())
-            .then(data => {
-                console.log(data);
-            });
-        });
-    });
-    </script>
 </body>
 </html>
