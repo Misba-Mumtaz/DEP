@@ -22,7 +22,6 @@ main {
     padding: 2rem;
 }
 
-
 .product {
     display: inline-block;
     margin: 1rem;
@@ -56,5 +55,26 @@ main {
 .product-image {
     width: 350px;
     height: 500px;
-    object-fit: cover; 
+    object-fit: cover;
+}
+
+input {
+    height: 20px;
+    width: 150px;
+    margin: 10px;
+}
+
+textarea {
+    height: 50px;
+    width: 150px;
+    margin: 10px;
+}
+
+#order  {
+    color: blue;
+    margin-left: 150px;
+}
+
+#order:hover {
+    background-color: orange;
 }

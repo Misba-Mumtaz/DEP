@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>E-Commerce</title>
+    <title>Products</title>
 </head>
 <body>
     <header>
@@ -16,29 +16,30 @@
         </nav>
     </header>
     <main>
-        <h2>Featured Necklaces</h2>
-        <div class="product" data-id="1">
+        <h2>All Necklaces</h2>
+        <div class="product" data-id="1" data-name="Necklace 1" data-price="10">
             <img src="necklace1.jpg" alt="Necklace 1" class="product-image">
             <p>Necklace 1 - $10</p>
             <button onclick="addToCart(1)">Add to Cart</button>
         </div>
-        <div class="product" data-id="2">
+        <div class="product" data-id="2" data-name="Necklace 2" data-price="10">
             <img src="necklace2.jpg" alt="Necklace 2" class="product-image">
             <p>Necklace 2 - $10</p>
             <button onclick="addToCart(2)">Add to Cart</button>
         </div>
-        <div class="product" data-id="3">
+        <div class="product" data-id="3" data-name="Necklace 3" data-price="10">
             <img src="necklace3.jpg" alt="Necklace 3" class="product-image">
             <p>Necklace 3 - $10</p>
             <button onclick="addToCart(3)">Add to Cart</button>
         </div>
     </main>
+    <a href="cart.html">Go to Cart</a>
     <script>
         function addToCart(productId) {
             const productElement = document.querySelector(`.product[data-id='${productId}']`);
-            const productName = productElement.querySelector('p').textContent;
-            const productPrice = productName.split(' - $')[1];
-            
+            const productName = productElement.getAttribute('data-name');
+            const productPrice = productElement.getAttribute('data-price');
+
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
             cart.push({ id: productId, name: productName, price: productPrice });
             localStorage.setItem('cart', JSON.stringify(cart));
